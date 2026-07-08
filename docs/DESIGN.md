@@ -47,11 +47,14 @@ Two products, two *different* guarantees. Keeping them distinct is a correctness
 - Everything beyond the judge (open-market GPUs) is inside the *verification* perimeter but outside the *trust* perimeter.
 - Sandbox extends the trust perimeter all the way to the worker. Core does not. Data-sensitive customers are Sandbox customers. **Verified ≠ confidential.**
 
+**Disclosure line (verbatim, in all Core documentation):**
+> *Core jobs run on machines whose owners can observe the workload. Core guarantees the correctness of results, not the privacy of inputs. Data-sensitive workloads belong on Secure Sandbox.*
+
 ---
 
 ## 3. Two supply chains
 
-**Subnet supply = confidential hardware only.** Admission requires a valid TEE attestation. No commodity GPUs, no benchmark tiers, no waivers. Emissions exist to bootstrap the one thing that is scarce and hard to find: attested confidential hardware. This single admission rule keeps the validator simple and eliminates the spoofing/sybil surface — a DCAP quote cannot be faked by a clever miner.
+**Subnet supply = confidential hardware only.** Admission requires a valid TEE attestation. Accepted evidence classes: AMD SEV-SNP (EPYC 7003 "Milan" and newer), Intel TDX (5th-gen Xeon Scalable and newer), and NVIDIA CC GPUs (H100/H200 Hopper CC, B200/B300 Blackwell) attested compositely with their host CPU TEE. No commodity GPUs, no benchmark tiers, no waivers. Emissions exist to bootstrap the one thing that is scarce and hard to find: attested confidential hardware. This single admission rule keeps the validator simple and eliminates the spoofing/sybil surface — a DCAP quote cannot be faked by a clever miner.
 
 **Commodity GPUs = procured, not mined.** For Core jobs, the judge rents commodity GPUs on demand from open markets, pushes the challenge harness, verifies, and tears down. These machines never touch the subnet, never earn emissions, never need admission logic. Zero demand → zero spend. Core's unit economics are ordinary business math (rent at market, sell verified execution at a markup), decoupled from tokenomics.
 
