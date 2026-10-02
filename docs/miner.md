@@ -1,5 +1,12 @@
 # Running a Cathedral Miner
 
+Cathedral now has two miner tracks:
+
+1. Compute miners provide machines that validators can inspect.
+2. Regulatory intelligence miners run Hermes workers on Polaris and maintain country cards.
+
+For the regulatory worker path, start here: [docs/regulatory-intelligence/miner.md](regulatory-intelligence/miner.md).
+
 This guide gets you from zero to a registered miner on Cathedral (Bittensor Subnet 39) in roughly an hour. It assumes you already have a Bittensor wallet and an SSH-accessible GPU box.
 
 > **Status:** Cathedral is early. Weight-setting is currently blocked on validator stake. Miners can register, pass verification, and accumulate CUs, but emissions won't flow until the stake threshold is met. See [docs/policy.md](policy.md).

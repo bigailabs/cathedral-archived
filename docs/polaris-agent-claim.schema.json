@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cathedral.computer/schemas/polaris-agent-claim.v1.json",
+  "title": "Cathedral Polaris Agent Claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "claim_id",
+    "work_unit",
+    "miner_hotkey",
+    "owner_wallet",
+    "polaris_agent_id",
+    "submitted_at",
+    "miner_signature"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "cathedral.polaris_agent_claim.v1"
+    },
+    "claim_id": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "work_unit": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 96,
+      "pattern": "^[a-z0-9_:-]+$"
+    },
+    "miner_hotkey": {
+      "type": "string",
+      "minLength": 16,
+      "maxLength": 128
+    },
+    "owner_wallet": {
+      "type": "string",
+      "minLength": 16,
+      "maxLength": 128
+    },
+    "polaris_agent_id": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 128,
+      "pattern": "^(agt|agent)_[A-Za-z0-9_.:-]+$"
+    },
+    "polaris_deployment_id": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 128
+    },
+    "polaris_run_id": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 128
+    },
+    "polaris_artifact_id": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 128
+    },
+    "declared_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 64,
+        "pattern": "^[a-z0-9_:-]+$"
+      },
+      "uniqueItems": true,
+      "maxItems": 24
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "miner_signature": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 512
+    }
+  },
+  "anyOf": [
+    {
+      "required": ["polaris_deployment_id"]
+    },
+    {
+      "required": ["polaris_run_id"]
+    },
+    {
+      "required": ["polaris_artifact_id"]
+    }
+  ]
+}

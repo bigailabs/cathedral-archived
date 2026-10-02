@@ -1,0 +1,32 @@
+{
+  "schema_version": "cathedral.regulatory_intelligence.artifact.v1",
+  "artifact_id": "artifact_invalid",
+  "card_id": "eu_ai_act_watch",
+  "job_id": "job_eu_ai_act_watch_2026_05_10",
+  "worker_id": "polaris_worker_reg_eu_ai_act_001",
+  "country": "European Union",
+  "jurisdiction_code": "EU",
+  "generated_at": "2026-05-10T00:00:00Z",
+  "title": "EU AI Act implementation watch",
+  "summary": "The law changed. You should comply immediately.",
+  "what_changed": "Something changed.",
+  "why_it_matters": "It matters.",
+  "action_items": ["Comply now."],
+  "risks": [],
+  "citations": [],
+  "confidence": 0.98,
+  "no_legal_advice": false,
+  "private_data_included": false,
+  "polaris": {
+    "worker_deploy_url": "",
+    "artifact_hash": "",
+    "usage_attribution_path": ""
+  },
+  "disqualifier_attestations": {
+    "not_legal_advice": false,
+    "no_confidential_data": true,
+    "citations_are_primary_sources": false,
+    "no_uncited_material_claims": false,
+    "does_not_count_self_usage_as_demand": true
+  }
+}

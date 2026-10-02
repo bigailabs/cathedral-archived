@@ -1,0 +1,11 @@
+{
+  "schema_version": "cathedral.regulatory_intelligence.job.v1",
+  "job_id": "job_eu_ai_act_watch_2026_05_10",
+  "card_id": "eu_ai_act_watch",
+  "worker_id": "polaris_worker_reg_eu_ai_act_001",
+  "objective": "Update the EU AI Act implementation watch card from approved official sources.",
+  "source_ids": ["eu_ai_act_eurlex", "eu_ai_act_commission"],
+  "artifact_type": "regulatory_intelligence_card",
+  "due_at": "2026-05-10T23:59:00Z",
+  "status": "assigned"
+}

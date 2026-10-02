@@ -1,0 +1,14 @@
+{
+  "schema_version": "cathedral.regulatory_intelligence.worker.v1",
+  "worker_id": "polaris_worker_reg_eu_ai_act_001",
+  "uid": 39,
+  "wallet": "5F_cathedral_demo_worker",
+  "runtime": "hermes",
+  "category": "regulatory_intelligence",
+  "endpoint": "https://polaris.example/workers/polaris_worker_reg_eu_ai_act_001",
+  "capabilities": ["research", "summarize", "cite_sources", "daily_update"],
+  "assigned_card_ids": ["eu_ai_act_watch"],
+  "config_version": "v1.0.0",
+  "status": "active",
+  "reputation_score": 72.0
+}

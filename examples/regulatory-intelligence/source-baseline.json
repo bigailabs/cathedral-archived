@@ -1,0 +1,149 @@
+{
+  "schema_version": "cathedral.regulatory_intelligence.source_baseline.v1",
+  "generated_at": "2026-05-10T00:00:00Z",
+  "sources": [
+    {
+      "source_id": "eu_ai_act_eurlex",
+      "jurisdiction_code": "EU",
+      "country": "European Union",
+      "title": "Regulation (EU) 2024/1689, Artificial Intelligence Act",
+      "authority": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+      "reliability_tier": "primary_law",
+      "topic_tags": ["ai_governance", "high_risk_ai", "general_purpose_ai"],
+      "poll_cadence_days": 7
+    },
+    {
+      "source_id": "eu_ai_act_commission",
+      "jurisdiction_code": "EU",
+      "country": "European Union",
+      "title": "European Commission AI Act policy page",
+      "authority": "European Commission",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "reliability_tier": "primary_regulator",
+      "topic_tags": ["ai_governance", "implementation", "ai_pact"],
+      "poll_cadence_days": 3
+    },
+    {
+      "source_id": "us_ai_eo_federal_register",
+      "jurisdiction_code": "US",
+      "country": "United States",
+      "title": "Executive Order 14110 on Safe, Secure, and Trustworthy AI",
+      "authority": "Federal Register",
+      "url": "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence",
+      "reliability_tier": "primary_law",
+      "topic_tags": ["ai_governance", "federal_policy", "safety"],
+      "poll_cadence_days": 7
+    },
+    {
+      "source_id": "us_nist_ai_rmf",
+      "jurisdiction_code": "US",
+      "country": "United States",
+      "title": "NIST AI Risk Management Framework",
+      "authority": "National Institute of Standards and Technology",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "reliability_tier": "primary_regulator",
+      "topic_tags": ["ai_risk", "assurance", "framework"],
+      "poll_cadence_days": 14
+    },
+    {
+      "source_id": "uk_ai_white_paper",
+      "jurisdiction_code": "UK",
+      "country": "United Kingdom",
+      "title": "A pro-innovation approach to AI regulation",
+      "authority": "Department for Science, Innovation and Technology",
+      "url": "https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach",
+      "reliability_tier": "official_policy",
+      "topic_tags": ["ai_governance", "regulatory_framework"],
+      "poll_cadence_days": 14
+    },
+    {
+      "source_id": "canada_ai_portal",
+      "jurisdiction_code": "CA",
+      "country": "Canada",
+      "title": "Canada Artificial Intelligence policies and initiatives",
+      "authority": "Government of Canada",
+      "url": "https://www.canada.ca/en/services/science/innovation/artificial-intelligence.html",
+      "reliability_tier": "official_policy",
+      "topic_tags": ["ai_governance", "aida", "compute_strategy"],
+      "poll_cadence_days": 7
+    },
+    {
+      "source_id": "singapore_model_ai_governance",
+      "jurisdiction_code": "SG",
+      "country": "Singapore",
+      "title": "Singapore Model AI Governance Framework",
+      "authority": "Personal Data Protection Commission",
+      "url": "https://www.pdpc.gov.sg/help-and-resources/2020/01/model-ai-governance-framework",
+      "reliability_tier": "primary_regulator",
+      "topic_tags": ["ai_governance", "model_framework", "personal_data"],
+      "poll_cadence_days": 14
+    },
+    {
+      "source_id": "singapore_ai_verify",
+      "jurisdiction_code": "SG",
+      "country": "Singapore",
+      "title": "AI Verify governance testing framework and toolkit launch",
+      "authority": "Personal Data Protection Commission",
+      "url": "https://www.pdpc.gov.sg/news-and-events/announcements/2022/05/launch-of-ai-verify---an-ai-governance-testing-framework-and-toolkit",
+      "reliability_tier": "primary_regulator",
+      "topic_tags": ["ai_governance", "testing", "assurance"],
+      "poll_cadence_days": 14
+    },
+    {
+      "source_id": "japan_ai_business_guidelines",
+      "jurisdiction_code": "JP",
+      "country": "Japan",
+      "title": "AI Guidelines for Business Ver. 1.0",
+      "authority": "METI and MIC",
+      "url": "https://www.meti.go.jp/english/press/2024/0419_002.html",
+      "reliability_tier": "primary_regulator",
+      "topic_tags": ["ai_governance", "business_guidelines"],
+      "poll_cadence_days": 14
+    },
+    {
+      "source_id": "india_dpdp_act",
+      "jurisdiction_code": "IN",
+      "country": "India",
+      "title": "Digital Personal Data Protection Act, 2023",
+      "authority": "India Code",
+      "url": "https://www.indiacode.nic.in/handle/123456789/22037?locale=en",
+      "reliability_tier": "primary_law",
+      "topic_tags": ["data_protection", "privacy"],
+      "poll_cadence_days": 7
+    },
+    {
+      "source_id": "australia_ai_assurance_framework",
+      "jurisdiction_code": "AU",
+      "country": "Australia",
+      "title": "National framework for the assurance of AI in government",
+      "authority": "Australian Government Department of Finance",
+      "url": "https://www.finance.gov.au/government/public-data/data-and-digital-ministers-meeting/national-framework-assurance-artificial-intelligence-government",
+      "reliability_tier": "primary_regulator",
+      "topic_tags": ["ai_assurance", "government_use", "ethics"],
+      "poll_cadence_days": 14
+    },
+    {
+      "source_id": "uae_ai_strategy",
+      "jurisdiction_code": "AE",
+      "country": "United Arab Emirates",
+      "title": "UAE National Strategy for Artificial Intelligence 2031",
+      "authority": "UAE Artificial Intelligence Office",
+      "url": "https://ai.gov.ae/strategy/",
+      "reliability_tier": "official_policy",
+      "topic_tags": ["ai_strategy", "government_services"],
+      "poll_cadence_days": 30
+    },
+    {
+      "source_id": "china_generative_ai_interim_measures",
+      "jurisdiction_code": "CN",
+      "country": "China",
+      "title": "Interim Measures for the Management of Generative AI Services",
+      "authority": "Cyberspace Administration of China",
+      "url": "http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+      "reliability_tier": "primary_regulator",
+      "topic_tags": ["generative_ai", "ai_governance", "platform_compliance"],
+      "poll_cadence_days": 14
+    }
+  ]
+}

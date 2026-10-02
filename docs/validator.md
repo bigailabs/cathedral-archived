@@ -1,5 +1,12 @@
 # Cathedral SN39 Validator Handoff
 
+Cathedral now has two validator tracks:
+
+1. Compute validation checks whether miner machines are real and reachable.
+2. Regulatory intelligence validation checks whether worker cards are sourced, useful, maintained, and attributable to Polaris.
+
+For the regulatory worker validator path, start here: [docs/regulatory-intelligence/validator.md](regulatory-intelligence/validator.md).
+
 This is the validator handoff for Cathedral on Bittensor SN39.
 
 Cathedral is in its compute-validation phase today. A validator runs the Cathedral validator, checks miner machines, records verification evidence, scores the available compute, and sets weights on SN39 from a permitted validator hotkey.

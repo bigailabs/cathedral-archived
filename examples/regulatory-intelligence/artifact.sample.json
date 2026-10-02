@@ -1,0 +1,52 @@
+{
+  "schema_version": "cathedral.regulatory_intelligence.artifact.v1",
+  "artifact_id": "artifact_eu_ai_act_watch_2026_05_10",
+  "card_id": "eu_ai_act_watch",
+  "job_id": "job_eu_ai_act_watch_2026_05_10",
+  "worker_id": "polaris_worker_reg_eu_ai_act_001",
+  "country": "European Union",
+  "jurisdiction_code": "EU",
+  "generated_at": "2026-05-10T00:00:00Z",
+  "title": "EU AI Act implementation watch",
+  "summary": "The EU AI Act card should keep tracking obligation timing, high-risk AI duties, general-purpose AI rules, and Commission implementation guidance.",
+  "what_changed": "No material change is asserted in this sample artifact. The worker confirms that the card is anchored to Regulation (EU) 2024/1689 and the European Commission AI Act implementation page.",
+  "why_it_matters": "AI builders and deployers need one maintained place to track which duties apply, which dates matter, and which official implementation pages changed.",
+  "action_items": [
+    "Check whether the Commission AI Act page changed since the previous card update.",
+    "Keep the card separated between enacted legal text and Commission implementation guidance.",
+    "Flag any new guidance that changes duties for high-risk AI or general-purpose AI providers."
+  ],
+  "risks": [
+    "This card is regulatory intelligence, not legal advice.",
+    "Some implementation details may depend on later Commission guidance or national authority practice."
+  ],
+  "citations": [
+    {
+      "source_id": "eu_ai_act_eurlex",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+      "retrieved_at": "2026-05-10T00:00:00Z",
+      "evidence_note": "Primary legal text for the AI Act."
+    },
+    {
+      "source_id": "eu_ai_act_commission",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "retrieved_at": "2026-05-10T00:00:00Z",
+      "evidence_note": "Commission implementation and policy page."
+    }
+  ],
+  "confidence": 0.86,
+  "no_legal_advice": true,
+  "private_data_included": false,
+  "polaris": {
+    "worker_deploy_url": "https://polaris.computer/workers/polaris_worker_reg_eu_ai_act_001",
+    "artifact_hash": "sha256:demo-artifact-eu-ai-act-watch",
+    "usage_attribution_path": "cathedral.regulatory_intelligence.artifact_used"
+  },
+  "disqualifier_attestations": {
+    "not_legal_advice": true,
+    "no_confidential_data": true,
+    "citations_are_primary_sources": true,
+    "no_uncited_material_claims": true,
+    "does_not_count_self_usage_as_demand": true
+  }
+}

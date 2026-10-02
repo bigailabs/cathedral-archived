@@ -1,0 +1,44 @@
+{
+  "schema_version": "cathedral.regulatory_intelligence.card_registry.v1",
+  "cards": [
+    {
+      "card_id": "eu_ai_act_watch",
+      "country": "European Union",
+      "jurisdiction_code": "EU",
+      "topic": "AI Act implementation",
+      "title": "EU AI Act implementation watch",
+      "summary": "Tracks implementation duties, guidance, dates, and obligations under the EU AI Act.",
+      "tags": ["ai_governance", "high_risk_ai", "general_purpose_ai"],
+      "required_source_ids": ["eu_ai_act_eurlex", "eu_ai_act_commission"],
+      "assigned_worker_id": "polaris_worker_reg_eu_ai_act_001",
+      "status": "active",
+      "update_cadence": "daily"
+    },
+    {
+      "card_id": "us_ai_governance_watch",
+      "country": "United States",
+      "jurisdiction_code": "US",
+      "topic": "Federal AI governance",
+      "title": "US federal AI governance watch",
+      "summary": "Tracks federal AI governance, NIST risk guidance, and safety policy signals.",
+      "tags": ["ai_governance", "federal_policy", "ai_risk"],
+      "required_source_ids": ["us_ai_eo_federal_register", "us_nist_ai_rmf"],
+      "assigned_worker_id": null,
+      "status": "open",
+      "update_cadence": "daily"
+    },
+    {
+      "card_id": "sg_ai_assurance_watch",
+      "country": "Singapore",
+      "jurisdiction_code": "SG",
+      "topic": "AI assurance",
+      "title": "Singapore AI assurance watch",
+      "summary": "Tracks AI governance, testing, and assurance frameworks from PDPC and IMDA.",
+      "tags": ["ai_governance", "assurance", "testing"],
+      "required_source_ids": ["singapore_model_ai_governance", "singapore_ai_verify"],
+      "assigned_worker_id": null,
+      "status": "open",
+      "update_cadence": "daily"
+    }
+  ]
+}

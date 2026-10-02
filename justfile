@@ -380,6 +380,18 @@ localnet-restart:
 cost-collapse-preflight MANIFEST="docs/cost-collapse/starter-kit/submission-manifest.example.json":
     python3 scripts/cost-collapse/preflight.py {{MANIFEST}} --root docs/cost-collapse/starter-kit
 
+# Run regulatory intelligence artifact preflight
+regulatory-preflight ARTIFACT="examples/regulatory-intelligence/artifact.sample.json":
+    python3 scripts/regulatory-intelligence/preflight.py {{ARTIFACT}}
+
+# Prove invalid regulatory fixture fails preflight
+regulatory-preflight-invalid:
+    python3 scripts/regulatory-intelligence/preflight.py examples/regulatory-intelligence/artifact.invalid.json --expect-fail
+
+# Run local regulatory intelligence e2e harness
+regulatory-e2e:
+    python3 scripts/regulatory-intelligence/run_local_e2e.py
+
 # =============================================================================
 # PYTHON SDK
 # =============================================================================
