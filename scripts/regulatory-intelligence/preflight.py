@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -59,9 +59,12 @@ def parse_time(value: object) -> datetime | None:
     if not isinstance(value, str) or not value.strip():
         return None
     try:
-        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
     except ValueError:
         return None
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        return None
+    return parsed
 
 
 def is_url(value: object, require_https: bool = True) -> bool:
@@ -116,17 +119,18 @@ def score_artifact(artifact: dict, card: dict, sources_by_id: dict[str, dict]) -
     required_total = max(len(required_ids), 1)
     source_quality = round(30 * (required_covered / required_total))
 
-    generated_at = parse_time(artifact.get("generated_at")) or datetime.now(timezone.utc)
+    generated_at = parse_time(artifact.get("generated_at"))
     fresh_count = 0
-    for citation in citations:
-        if not isinstance(citation, dict):
-            continue
-        retrieved_at = parse_time(citation.get("retrieved_at"))
-        if retrieved_at is None:
-            continue
-        age_days = abs((generated_at - retrieved_at).total_seconds()) / 86400
-        if age_days <= 7:
-            fresh_count += 1
+    if generated_at is not None:
+        for citation in citations:
+            if not isinstance(citation, dict):
+                continue
+            retrieved_at = parse_time(citation.get("retrieved_at"))
+            if retrieved_at is None:
+                continue
+            age_seconds = (generated_at - retrieved_at).total_seconds()
+            if 0 <= age_seconds <= 7 * 86400:
+                fresh_count += 1
     freshness = round(20 * (fresh_count / max(len(citations), 1)))
 
     text = " ".join(
@@ -199,7 +203,7 @@ def validate_artifact(
 
     generated_at = parse_time(artifact.get("generated_at"))
     if generated_at is None:
-        failures.append("generated_at must be an ISO timestamp")
+        failures.append("generated_at must be a timezone-aware ISO timestamp")
 
     confidence = artifact.get("confidence")
     if not isinstance(confidence, (int, float)) or isinstance(confidence, bool) or not 0 <= confidence <= 1:
@@ -242,8 +246,11 @@ def validate_artifact(
             failures.append(f"citations[{index}] jurisdiction does not match artifact")
         if citation.get("url") != source.get("url"):
             failures.append(f"citations[{index}].url must match the source registry URL")
-        if parse_time(citation.get("retrieved_at")) is None:
-            failures.append(f"citations[{index}].retrieved_at must be an ISO timestamp")
+        retrieved_at = parse_time(citation.get("retrieved_at"))
+        if retrieved_at is None:
+            failures.append(f"citations[{index}].retrieved_at must be a timezone-aware ISO timestamp")
+        elif generated_at is not None and retrieved_at > generated_at:
+            failures.append(f"citations[{index}].retrieved_at must not be later than generated_at")
         note = citation.get("evidence_note")
         if not isinstance(note, str) or len(note.strip()) < 15:
             failures.append(f"citations[{index}].evidence_note must explain the evidence")

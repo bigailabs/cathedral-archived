@@ -20,6 +20,8 @@ The v1 scorer uses:
 
 The local scorer is deterministic so validators can inspect it.
 
+In this local harness, timestamps must include a timezone. A citation retrieved after its artifact generation is rejected, and citations more than seven days older than generation receive no freshness points. These checks describe local preflight behavior only; they do not establish production reward eligibility or change reward, chain, or economic policy.
+
 ## Required checks
 
 For each artifact:
